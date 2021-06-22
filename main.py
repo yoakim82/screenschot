@@ -2,14 +2,14 @@
 
 # Press Skift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-import pyautogui
+#import pyautogui
 import pygetwindow as pw
-import win32gui
-import win32ui
-import win32con
+import win32gui # part of pywin32
+import win32ui  # part of pywin32
+import win32con # part of pywin32
 from ctypes import windll
 import numpy as np
-import cv2
+import cv2 # prt of opencv-python
 from PIL import Image
 
 
@@ -53,9 +53,9 @@ def background_screenshot(hwnd, width, height):
     return cv2.cvtColor(np.array(im), cv2.COLOR_RGB2BGR) # return cv2 image object
 
 if __name__ == '__main__':
-    print_hi('PyCharm')
-    #wName = 'ICA - Google Chrome'
-    wName = 'python - Convert image from PIL to openCV format - Stack Overflow - Google Chrome'
+    #print_hi('PyCharm')
+    wName = 'ICA - Google Chrome'
+    #wName = 'python - Convert image from PIL to openCV format - Stack Overflow - Google Chrome'
     hwnd = win32gui.FindWindow(None, wName)
     img = background_screenshot(hwnd, 1280, 780)
     #cvImg = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
